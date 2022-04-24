@@ -1,0 +1,121 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<div class="row">
+<div class="col-2 ">
+</div>
+<div class="col-lg-8  col-sm-12 form-group" id="form-login">
+
+  <form (submit)=submitNewProjectForm() class="" action="index.html" method="post" #projectForm="ngForm">
+    <h5 class="col-20 titulo">Nuevo Proyecto</h5>
+    <h5><label for="" class="step-form labelForm" class="titulo">Paso 1: Definiendo el Proyecto </label></h5>
+    <label class="labelForm" for="nombre-proyecto" >Titulo del Proyecto</label>
+    <input class="form-control " type="text"  value="" id="titulo"
+      maxlength="255" minlength="1"
+      required minlength="1"
+      [(ngModel)]="proyecto.titulo" name="titulo"
+      #titulo="ngModel"
+    >
+    <div *ngIf="emptyTitulo" class="alert alert-warning box-msg" role="alert">
+      <strong>Debe de nombrar su proyecto.</strong>
+    </div>
+
+    <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)"
+    class="alert alert-danger">
+      <strong>Campo requerido!</strong>
+    </div>
+
+
+    <label class="labelForm"for="descripcion-proyecto">De una descripcion detallada del proyecto</label>
+
+    <textarea class="form-control" rows="3" cols="" id="descripcion" maxlength="1000" minlength="1"
+    required minlength="1"
+    [(ngModel)]="proyecto.descripcion" name="descripcion"
+    #descripcion="ngModel"
+    ></textarea>
+    <div *ngIf="emptyDescripcion " class="alert alert-warning box-msg" role="alert">
+      <strong>Su proyecto debe de llevar una descripcion.</strong>
+    </div>
+    <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)"
+    class="alert alert-danger">
+      <strong>Campo requerido!</strong>
+    </div>
+
+
+    <label class="labelForm" for="">Desea que el proyecto sea visto al publico? </label>
+    <select class="form-select form-control" name="select"
+      [(ngModel)]="proyecto.visibilidad" name="visibilidad"
+    >
+      <option value="si">Si</option>
+      <option value="no" selected>No</option>
+    </select>
+    <hr>
+    <h5><label class="step-form labelForm" class="titulo">Paso 2: Alcance </label></h5>
+    <label class="labelForm"for="">Presupuesto. Es presupuesto no debe ser menor de Lps.1000 o mayor de Lps.300000 </label>
+    <div class="d-flex align-items-start">
+        <label class="labelForm"for="">Lps.</label><input class="form-control"  type="number"   value="" id="presupuesto" min=1000 max=300000
+        required [min]="1000"
+        required [max]="300000"
+        [(ngModel)]="proyecto.presupuesto" name="presupuesto"
+        #presupuesto="ngModel"
+        >
+    </div>
+    <div *ngIf="wrongPresupuesto" class="alert alert-warning box-msg" role="alert">
+      <strong>El presupuesto debe ser entre lps.1000 y 300,000!</strong>
+    </div>
+    <div *ngIf="presupuesto.invalid && (presupuesto.dirty || presupuesto.touched)"
+    class="alert alert-danger">
+      <strong>Debe de estimar un presupuesto. Este puede ser negociable y ser modificado.</strong>
+    </div>
+    <label class="labelForm"for="">Seleccione el marco de tiempo que mas se asemeja a su necesidad. De no estar seguro lo puede dejar vacio o seleccionar indefinido</label>
+    <select class="form-select form-control" id="timeframes" required id="timeframe"
+      [(ngModel)]="proyecto.timeframe" name="timeframe"
+    >
+      <option *ngFor="let tfs of timeframes" [value]="tfs">{{tfs}}</option>
+    </select>
+
+    <br>
+    <hr>
+    <h5><label class="step-form labelForm" class="titulo">Paso 3: Perfil del talento</label></h5>
+    <label class="labelForm"for="">Seleccione el rol de su freelance. Puede dejarlo vacio o seleccionar indefinido.</label>
+    <select class="form-select form-control" id="herramientas" required id="herramientaID"
+      [(ngModel)]="proyecto.roles" name="roles"
+    >
+      <option *ngFor="let rol of roles" [value]="rol">{{rol}}</option>
+    </select>
+
+    <label class="labelForm" for="">Escoja sus herramientas. Puede dejarlo vacio.</label>
+    <div class="d-flex align-content-start flex-wrap">
+      <div class="d-flex align-content-start flex-wrap" *ngFor="let herr of herramientas" [value]="herr"
+      (click)="addHerramienta(herr)">
+      <button  type="button" class="btn btn-sm d-flex align-content-center flex-wrap text-center" name=""  id="btnSelectHerramienta" >
+        <span class="material-icons">
+          add_circle_outline
+        </span>&nbsp;&nbsp;{{herr}}</button>
+      </div>
+
+    </div>
+    <label class="labelForm" for="">Herramientas seleccionadas</label>
+    <div class="d-flex align-content-start flex-wrap">
+      <div class="d-flex align-content-start flex-wrap" *ngFor="let sherr of proyecto.herramientas" [value]="sherr"
+      (click)="removeHerramienta(sherr)">
+        <button  type="button" class="btn btn-sm d-flex align-content-center flex-wrap text-center" name=""  id="btnDeselectHerramienta" >
+          <span class="material-icons">
+            remove_circle_outline
+          </span>&nbsp;&nbsp;{{sherr}}</button>
+      </div>
+    </div>
+    <div *ngIf="camposIncompletos" class="alert alert-danger box-msg alert-dismissible fade show" role="alert" id=fixedalert>
+      <strong>Algunos campos presentan errores!</strong>
+    </div>
+    <br><br>
+    <div class="text-center">
+      <button class="btn btn-block btn-primary rounded-pill " type="submit" name="button">Guardar</button>
+    </div>
+
+
+  </form>
+
+</div>
+<div class="col-2">
+</div>
+</div>

@@ -1,0 +1,45 @@
+#login{
+    padding-top:80px;
+    padding-bottom:200px; 
+    background-color: rgba(61, 194, 250,0.25);
+    height:100vh;
+ }
+ 
+ #form-login{
+    padding: 80px 50px;
+   
+ }
+ 
+ .titulo{
+     display: block;
+     font-size: 30px;
+     color: #0077b6;
+     line-height: 1.2;
+     text-align: center;
+     padding-bottom:30px; 
+     margin: auto;
+ }
+ 
+ .espaciado{
+     margin-bottom:30px;
+ }
+ 
+ .btnIn{		
+     margin-top: 50px;
+     text-align: center;
+ }
+ 
+ input:focus{
+     box-shadow: 0 2px 5px 0 rgba(15, 255, 254,1) 0 2px 10px 0 rgba(15, 255, 254,1)!important;
+     background-color: rgba(15, 255, 254,0.2)!important;
+ }
+ 
+ .error{
+     padding-top: 3px;
+     color: red;
+     font-size: .7rem;
+ }
+ 
+ input.errorFondo:focus{
+     background-color: rgba(255,204,204,0.3)!important;
+ }

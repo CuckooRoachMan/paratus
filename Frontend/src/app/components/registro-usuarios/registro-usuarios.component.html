@@ -1,0 +1,108 @@
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-4 col-xl-4 sombras mx-auto" style="background-color: white;">
+        
+        <form (submit)="signUp()" id="form-login">
+            <h5 class="col-5 titulo">Registro</h5>
+          <div class="form-group espaciado">
+            <input mdbInput mdbValidate type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control rounded-pill" pattern="[a-zA-Z| ]*" placeholder="Nombre" #nombre="ngModel" minlength="4" maxlength="30" required autofocus>
+            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="error">
+              <div *ngIf="nombre.errors.required">
+                  El campo es obligatorio
+              </div>
+              <div *ngIf="nombre.errors.minlength">
+                  El nombre debe tener al menos 4 caracteres
+              </div>
+              <div *ngIf="nombre.errors.minlength">
+                El nombre debe tener menos 30 caracteres
+              </div>
+              <div *ngIf="nombre.errors.pattern">
+                  Solo incluya letras en el nombre
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group espaciado">
+            <input mdbInput mdbValidate type="text" [(ngModel)]="user.username" name= "username" class="form-control rounded-pill" placeholder="Nombre Usuario" #username="ngModel" maxlength="30" required>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error">
+              <div *ngIf="username.errors.required">
+                  El campo es obligatorio
+              </div>
+              <div *ngIf="username.errors.minlength">
+                El nombre de usuario debe tener menos 30 caracteres
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group espaciado">
+            <input mdbInput mdbValidate type="email" [(ngModel)]="user.email" name= "email" class="form-control rounded-pill" placeholder="Email" #email="ngModel" required>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+              <div *ngIf="email.errors.required">
+                  El campo es obligatorio
+              </div>
+            </div>
+          </div>
+
+          <div [formGroup]="signup">
+            <div class="form-group espaciado input-group">
+                <input mdbInput mdbValidate (change)="verify()" type="password" mdbActive  id="defaultLoginFormPassword" name="password" [type]="hide2 ? 'password' : 'text'" formControlName="password" class="form-control rounded-pill" placeholder="Contraseña" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"> <mdb-icon fas icon="eye-slash" *ngIf="hide2==true else eyeOpen" (click)="hide2 = !hide2"></mdb-icon></span>
+                        <ng-template #eyeOpen >
+                            <mdb-icon fas icon="eye" (click)="hide2 = !hide2"></mdb-icon>
+                        </ng-template>
+                </div>
+            <br>    
+            </div>
+            <div [innerHTML]="template"></div>
+            <div class="form-group espaciado input-group"> 
+                <input mdbInput mdbValidate type="password" mdbActive  id="defaultLoginFormPassword1" name="vpassword" [type]="hide ? 'password' : 'text'" formControlName="vpassword" class="form-control rounded-pill" placeholder="Confirmación de Contraseña" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"> <mdb-icon fas icon="eye-slash" *ngIf="hide==true else eyeOpen2" (click)="hide = !hide"></mdb-icon></span>
+                        <ng-template #eyeOpen2 >
+                            <mdb-icon fas icon="eye" (click)="hide = !hide"></mdb-icon>
+                        </ng-template>
+                </div>                       
+              </div>
+            </div>
+
+          <div class="form-group espaciado">
+            <input mdbInput mdbValidate type="text" [(ngModel)]="user.telefono" name="telefono" class="form-control rounded-pill" placeholder="Teléfono móvil" #telefono= "ngModel" maxlength="8" pattern="[0-9]*" required>
+            <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="error">
+              <div *ngIf="telefono.errors.required">
+                  El campo es obligatorio
+              </div>
+              <div *ngIf="telefono.errors.maxlength">
+                El número de teléfono no debe pasar los 8 dígitos.
+              </div>
+              <div *ngIf="telefono.errors.pattern">
+                El número de teléfono solo puede incluir números.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group espaciado">
+            Género:<br>
+            <label>
+              Femenino  <input type="radio" value="F" [(ngModel)]="user.genero" name = 'genero' />
+            </label>
+            &nbsp;
+            <label>
+              Masculino <input type="radio" value="M" [(ngModel)]="user.genero" name = 'genero'/>
+            </label>
+            &nbsp;
+            <label>
+              Omitir <input type="radio" value="O" [(ngModel)]="user.genero" name = 'genero'/>
+            </label>
+          </div>
+
+          <div class="form-group col-8 mx-auto botonIn">
+            <button type="submit" class="btn rounded-pill" style="background-color:#0077b6;color: white;padding: 8px 38px;">Crear Cuenta</button>
+          </div>
+              
+        </form>
+      </div>
+    </div>
+
+  </div> 

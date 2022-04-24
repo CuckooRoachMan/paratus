@@ -1,0 +1,123 @@
+#form-login{
+    padding: 30px 50px;
+   
+  }
+  
+  #form-login2{
+    padding: 80px 50px;
+   
+  }
+  
+  body {
+      overflow-x: hidden;
+    }
+    row{
+      overflow-x: hidden;
+    }
+
+    .espaciado{
+        margin-bottom:30px;
+    }
+  
+    .titulo{
+      display: block;
+      font-size: 30px;
+      color: #0077b6;
+      line-height: 1.2;
+      //text-align: center;
+      padding-bottom:30px; 
+      margin: auto;
+  }
+  
+   input {
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+       border-radius: 20px;
+       border: 1px solid lightgray;
+       width: 250px;
+       height: 30px;
+       padding-left: 10px;
+       margin-bottom: 10px;
+   }
+  
+   textarea {
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      width: 450px;
+      height: 150px;
+      padding-left: 10px;
+   }
+   select {
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      width: 250px;
+  
+      padding-left: 10px;
+  
+   }
+  
+  
+   input:focus{
+      box-shadow: 0 2px 5px 0 rgba(15, 255, 254,1) 0 2px 10px 0 rgba(15, 255, 254,1)!important;
+      background-color: rgba(15, 255, 254,0.2)!important;
+  }
+  
+  label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+  }
+  
+  h5{
+    padding-left: 30px;
+  }
+  
+  img {
+    max-width: 350px;
+  }
+  
+  #body-edit-profile{
+  
+    background-color: white;
+  }
+  
+  #cambioPass{
+    padding-left: 50px;
+  }
+  
+  #cambioContact{
+    padding-left: 50px;
+  }
+  
+  
+  #subirImagenBtn {
+    background-color: white;
+    color:#092556;
+    border-color: #092556;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #subirImagenBtn:hover {
+    background-color: #092556;
+    color:white;
+    border-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #fixedalert{
+    text-align: center;
+    position: fixed;
+    top: 90px;
+    right: 260px;
+  }
+  .genericAlert{
+    background-color: white;
+    color: red;
+    border-color: white;
+  
+  }

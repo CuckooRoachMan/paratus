@@ -1,0 +1,28 @@
+#form-login{
+    padding: 80px 50px;
+   
+ }
+
+ input:focus{
+    box-shadow: 0 2px 5px 0 rgba(15, 255, 254,1) 0 2px 10px 0 rgba(15, 255, 254,1)!important;
+    background-color: rgba(15, 255, 254,0.2)!important;
+}
+
+.titulo{
+    display: inline-block;
+    font-size: 25px;
+    color: #0077b6;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom:30px; 
+    margin: auto;
+}
+
+.botonIn{	
+    text-align: center;	
+    margin-top: 50px;
+ }
+
+ .espaciado{
+    margin-bottom:30px;
+}

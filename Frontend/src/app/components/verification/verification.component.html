@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row" style="padding-bottom:15%;">
+        <div class="col-md-4 mx-auto pad2y" >
+            <div class="card" id="form-login">
+                <h5 class="col-20 titulo">Verificación de Cuenta</h5>
+                <div class="card-body">
+                    <form (submit)="verification()">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="user.codigo" name="codigo" class="form-control rounded-pill" placeholder="Ingrese su código" required autofocus>
+                        </div>
+                        <div class="form-group col-16 mx-auto botonIn">
+                            <button type="submit" class="btn rounded-pill" style="background-color:#0077b6;color: white;padding: 8px 38px;">Verificar</button>
+                        </div>
+                        <!--div class="d-flex justify-content-around">
+                            <a routerLink="/resend-code">No recibí el correo</a>
+                        </div-->
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

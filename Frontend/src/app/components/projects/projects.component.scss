@@ -1,0 +1,32 @@
+.card{
+    width: 18rem;
+    list-style: none;
+    padding: 20px;
+    display: inline-block;
+    //background-color: 1px solid black;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px;
+  }
+
+h1, h3,h5, p{
+    text-align: center;
+}
+
+.texto{
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+
+.myCustomModalClass .modal-dialog {
+  width: 714px;
+  max-width: 714px;
+}
+
+.modal-footer{
+  justify-content: flex-start !important;
+}

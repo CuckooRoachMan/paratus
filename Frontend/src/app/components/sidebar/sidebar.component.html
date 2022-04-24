@@ -1,0 +1,48 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<div class="d-flex flex-column" id="sidebar-content">
+  <div class=" p-2 ">
+    <button class="btn d-flex justify-content-start" type="button" name="button">
+      <span class="material-icons">
+        view_column
+      </span>
+      <label for="" >Mis proyectos</label>
+    </button>
+
+  </div>
+  <div class=" p-2 ">
+    <button class="btn d-flex justify-content-start" (click)="goPublicarProyecto()" type="button" name="button">
+      <span class="material-icons">
+        wysiwyg
+      </span>
+      <label for="">Publicar proyecto</label>
+    </button>
+  </div>
+  <div class=" p-2 ">
+    <button class="btn d-flex justify-content-start" (click)="goMisProyectos()" type="button" name="button">
+      <span class="material-icons">
+        pageview
+      </span>
+      <label for=""> Mis Proyectos</label>
+    </button>
+    </div>
+    <div class=" p-2 ">
+      <button class="btn d-flex justify-content-start" (click)="goBuscarTalento()" type="button" name="button">
+        <span class="material-icons">
+          person_search
+        </span>
+        <label for="">Buscar Talento</label>
+      </button>
+    </div>
+      <div class=" p-2 ">
+        <button class="btn d-flex justify-content-start" (click)="goContactos()" type="button" name="button">
+          <span class="material-icons">
+            tty
+          </span>
+          <label for="">Contactos</label>
+        </button>
+      </div>
+
+
+</div>

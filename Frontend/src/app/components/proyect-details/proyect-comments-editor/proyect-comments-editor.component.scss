@@ -1,0 +1,30 @@
+img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+label {
+  margin: 0px
+
+}
+
+#commentTextArea{
+  //border-top-left-radius: 5%;
+  margin-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#btnResponder{
+  margin-top: 10px;
+
+
+}
+
+.alert{
+  background-color: white;
+  color: red;
+  border-color: white;
+}

@@ -1,0 +1,206 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+  }
+  
+  
+
+  body,h1,h2,h3,h4,h5,h6, p{font-family: "Raleway", sans-serif}
+.img1{
+    right: 90px;  
+    height: 390px; 
+    opacity: 40%;
+}
+
+.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 48px;
+    margin: 20px 150px ;      
+    margin-top: -220px;
+    float: left;
+    position: relative;
+    font-weight: bold;
+    flex-flow: wrap;      
+}
+.subtitulo2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+
+}
+
+
+.subtitulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+    margin: 20px 448px ; 
+    margin-top: -150px;
+    float: left;
+    position: relative; 
+    font-weight: bold;  
+    flex-flow: wrap;    
+}
+
+.paso1{
+    width: 130px;
+    right: 80px; 
+   
+}
+
+.tema1 {
+  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    
+}
+
+.imgPaso1{
+    padding-top: 100px;
+    width: 450px;
+    right: 110px;  
+
+}
+
+/******paso 2*****/
+.paso2{
+    width: 130px;
+    right: 80px;    
+}
+
+.tema2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    
+   
+   
+}
+
+.imgPaso2{
+    width: 450px;
+    right: 100px;  
+    padding-top: 100px;
+   
+
+}
+
+
+/*******************paso3***************/
+
+.paso3{
+    width: 130px;
+    right: 80px;
+    margin-top: 20px;
+   
+}
+
+
+.tema3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;    
+    
+
+}
+
+
+.imgPaso3{
+    width: 520px;
+    right: 350px;    
+   padding-top: 180px;
+}
+
+
+/***************************** paso4************************/
+
+.paso4{
+    width: 130px;
+    right: 80px;
+
+}
+
+.tema4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.imgPaso4{
+    width: 410px;
+    right: 110px;  
+    padding-top: 200px;
+    
+}
+/*********************************cierre******************************/
+.temacierre1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin-top: 40px;
+    float: left;
+  
+}
+
+ul li{
+    list-style: none;
+    padding: 20px;
+    display: inline-block;
+}
+
+.card-img-top{
+    width: 130px;
+    right: 80px;  
+
+}
+.card1 .card .card-img-top{
+    height: 230px;
+
+}
+.card3 .card .card-img-top{
+    height: 230px;
+
+}
+.card4 .card .card-img-top{
+    height: 230px;
+
+}
+.card1:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px;
+    
+}
+.card2:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px;
+    
+}
+
+.card3:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px;
+    
+}
+
+.card4:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px;
+    
+}
+
+
+.palabraCierre p{
+    font-size: 30px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+
+}
+
+
+/***************color*******************/
+
+
+
+.container{
+    background-color: antiquewhite;
+    margin: 0px;
+
+}

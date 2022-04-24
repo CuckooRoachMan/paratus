@@ -1,0 +1,80 @@
+<div class=" row ">
+    <div class="container-fluid" >
+      <div style="padding-bottom:1%;"><h1>Proyectos</h1></div>
+      <div align="center" class="row">
+        <div class="card-group mx-auto" *ngFor="let el of elements; let i = index">
+          <div class="card mx-3 my-3" >
+            <img src="../../../assets/img/carpeta.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">Tema: {{el.Titulo}}</h3>
+              <p class="card-text">
+                Descripción: {{el.Descripcion}}
+              </p>
+              <h5 *ngIf="i+1">Fecha: {{el.Fecha | date:'dd-MM-yyyy'}}</h5>
+              <div>
+                <button class="btn btn-success text-right" style="padding:5px 30px;" (click)="mostrarProyecto(content,el.ID)">Ver</button>
+              </div>     
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header" style="background-color:#3F729B">
+      <h4 class="modal-title mx-auto" id="modal-basic-title" style="color:white;">{{elements[idElement].Titulo}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="color:white;">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ">
+            <label class="texto">Descripcion</label>
+            <div>{{elements[idElement].Descripcion}}</div>
+          </li>
+          <li class="list-group-item ">
+            <label class="texto">Presupuesto</label>
+            <div>L. {{elements[idElement].Presupuesto}}</div>
+          </li>
+          <li class="list-group-item ">
+            <label class="texto">Roles</label>
+            <div>
+              <div *ngIf="elements[idElement].Roles!=''; else elseBlock1">{{elements[idElement].Roles}}</div>
+              <ng-template #elseBlock1>Ningun Rol en Particular.</ng-template>
+            </div>
+          </li>
+          <li class="list-group-item ">
+            <label class="texto">Herramientas</label>
+            <div>
+              <div *ngIf="elements[idElement].Herramientas!=''; else elseBlock2">{{elements[idElement].Herramientas}}</div>
+              <ng-template #elseBlock2>Ninguna Herramienta en Particular.</ng-template>
+            </div>
+          </li>
+          <li class="list-group-item ">
+            <label class="texto">Fecha Creacion</label>
+            <div>{{elements[idElement].Fecha | date:'dd-MM-yyyy'}}</div>
+          </li>
+          <li class="list-group-item ">
+            <label class="texto">Duracion Proyecto</label>
+            <div>
+              <div *ngIf="elements[idElement].Duracion!=''; else elseBlock3">{{elements[idElement].Duracion}}</div>
+              <ng-template #elseBlock3>Indefinido.</ng-template>
+            </div>
+          </li>
+          <li class="list-group-item ">
+            <label class="texto">Correo Cliente</label>
+            <div>{{elements[idElement].CorreoUsuario}}</div>
+          </li>
+          
+        </ul>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <!--button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button-->
+    </div>
+  </ng-template>
+  
+

@@ -1,0 +1,40 @@
+<div>    
+    <!-- Grid -->
+      <div class="container-fluid">
+  
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-md-8 col-lg-4 col-xl-4 sombras mx-auto" style="background-color: white;">
+            
+            <form (submit)="signIn()" [formGroup]="signin" id="form-login">
+              
+              <h5 class="col-14 titulo">Iniciar Sesión </h5>
+  
+              <input type="email" id="defaultLoginFormEmail" class="form-control rounded-pill mb-4" name="email" formControlName="email" placeholder="Correo" autofocus>
+  
+              <div class="input-group mb-4">
+                <input type="password" mdbActive  id="defaultLoginFormPassword" name="password" [type]="hide ? 'password' : 'text'" formControlName="password" class="form-control rounded-pill" placeholder="Contraseña" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"> <mdb-icon fas icon="eye-slash" *ngIf="hide==true else eyeOpen" (click)="hide = !hide"></mdb-icon></span>
+                            <ng-template #eyeOpen>
+                                <mdb-icon fas icon="eye" (click)="hide = !hide"></mdb-icon>
+                            </ng-template>
+                    </div>
+            </div>
+
+            <div class="d-flex justify-content-around">
+                <a routerLink="/rec-password">Olvidaste tu contraseña</a>
+            </div>
+            <br>
+            <div class="form-group col-4 mx-auto botonIn">
+                <a routerLink="/type-user" routerLinkActive="active">Registrarse</a>
+            </div>
+            <br>
+            <div class="form-group col-6 mx-auto botonIn">
+                <button type="submit" class="btn rounded-pill" style="background-color:#0077b6;color: white;padding: 10px 30px;">Ingresar</button>
+            </div>
+            </form>
+          </div>
+        </div>
+  
+      </div>  
+  <div>

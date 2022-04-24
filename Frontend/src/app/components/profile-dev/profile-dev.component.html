@@ -1,0 +1,68 @@
+<div class=" row ">
+    <div class="col-lg-1 col-md-1">
+    </div>
+    <div class="profile-card card col-md-8 my-4">
+      <div class="card-body">
+        <div class="row justify-content-center justify-content-center">
+          <div class="col-11 col-lg-4" id="profile-photo" >
+              <div class="text-center">
+                  <img class="rounded-circle img-fluid" [src]="imgURL" alt=""/>
+              </div>
+              <h2>{{profile.nombre}}</h2>
+              <h5>Profesional</h5>
+          </div>
+          <div class="col-11 col-lg-6 d-flex flex-row flex-wrap border-none" id="profile-info">
+                <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                  <br>
+                  <br>
+                <b><label for="">Nombre de Usuario:</label></b>
+              </div>
+              <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                  <br>
+                  <br>
+                <b><label for="">{{profile.username}}</label></b>
+              </div>
+              <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                <b><label for="">Correo:</label></b>
+              </div>
+              <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                <b><label for="">{{profile.email}}</label></b>
+              </div>
+
+              <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                <b><label for="">Profesión:</label></b>
+              </div>
+              <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                <b><label for="">{{profile.profesion}}</label></b>
+              </div>
+
+              <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                <b><label for="">Tecnologías:</label></b>
+              </div>
+              <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                <b><label for="">{{profile.tecnologias}}</label></b>
+              </div>
+
+              <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                <b><label for="">Experiencia:</label></b>
+              </div>
+              <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                <b><label for="">{{profile.experiencia}}</label></b>
+              </div>
+  
+              <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                <b><label for="">Telefono:</label></b>
+              </div>
+              <div class="col-12 col-sm-8 col-lg-0 d-flex flex-column">
+                <b><label for="">{{profile.telefono}}</label></b>
+              </div>
+          </div>
+          <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary" id='editarPerfil' (click)="goEditarPerfil()" style="background-color:#0077b6;color: white;padding: 10px 30px;">Editar perfil</button>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>

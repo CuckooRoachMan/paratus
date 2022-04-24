@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-lg-2 col-md-2">
+    </div>
+    <div class="col-lg-6  col-sm-12 form-group" id="form-login">
+    
+      <form id="body-edit-profile" >
+        <h5 class="">Editar mi perfil</h5>
+        <div class=" row d-flex d-flex justify-content-center ">
+          <div class=" col-lg-5 col-sm-15 card d-flex profile-img" style="padding-bottom: 14%">
+            <img class="rounded-circle img-fluid" [src]="imgURL" alt="Imagen no cargo" />
+            <div class="file profile-edit-btn" style=" width: 100%; " >
+              <input type="file" name="file" (change)="createFormData($event)" accept="image/*" style="width: 100%; height: 100%; cursor: pointer;" />
+            </div>
+            <br>
+            <!--<input type="file" name="file" (change)="createFormData($event)" accept="image/*" style="width: 100%; height: 100%; cursor: pointer;" />-->
+            <div class="text-center" *ngIf="newURL">
+              <button type="button" (click)="goSubirImagen()" class="btn btn-xl btn-success">Subir Imagen</button>
+              
+            </div>
+            
+            <!--<button type="button" class="btn btn-outline-secondary" id='subirImagenBtn' (click)="goSubirImagen()">Subir Imagen</button>-->
+          </div>
+  
+    
+          <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column bd-highlight mb-3">
+            <label for="">Nombre: {{profile.nombre}}  </label>
+            <label for="">Nombre de usuario: {{profile.username}} </label>
+            <label for="">Correo: {{profile.email}}</label>
+            <label for="">Profesión: {{profile.profesion}}</label>
+          </div>
+        </div>
+        <br>
+        <h5>Cambio de Contraseña</h5>
+        <div class="card-body" id="form-login">
+          <form (submit)="changePass() "[formGroup]="changePassw" >
+              <div class="form-group input-group"> 
+                  <input mdbInput mdbValidate type="password" mdbActive  id="defaultLoginFormPassword1" name="contrasenaActual" [type]="hide ? 'password' : 'text'" formControlName="contrasenaActual" class="form-control" placeholder="Contraseña Actual" aria-label="Recipient's username" aria-describedby="basic-addon">
+                  <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon"> <mdb-icon fas icon="eye-slash" *ngIf="hide==true else eyeOpen" (click)="hide = !hide"></mdb-icon></span>
+                          <ng-template #eyeOpen >
+                              <mdb-icon fas icon="eye" (click)="hide = !hide"></mdb-icon>
+                          </ng-template>
+                  </div>                       
+              </div>
+              <div class="form-group input-group"> 
+                  <input mdbInput mdbValidate (change)="verify()" type="password" mdbActive  id="defaultLoginFormPassword" name="contrasenaNueva1" [type]="hide2 ? 'password' : 'text'" formControlName="contrasenaNueva1" class="form-control" placeholder="Contraseña Nueva" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2"> <mdb-icon fas icon="eye-slash" *ngIf="hide2==true else eyeOpen2" (click)="hide2 = !hide2"></mdb-icon></span>
+                          <ng-template #eyeOpen2 >
+                              <mdb-icon fas icon="eye" (click)="hide2 = !hide2"></mdb-icon>
+                          </ng-template>
+                  </div>                       
+              </div>
+              <div [innerHTML]="template"></div>
+              <div class="form-group input-group"> 
+                  <input mdbInput mdbValidate type="password" mdbActive  id="defaultLoginFormPassword2" name="contrasenaNueva2" [type]="hide3 ? 'password' : 'text'" formControlName="contrasenaNueva2" class="form-control" placeholder="Confirme Su Contraseña Nueva" aria-label="Recipient's username" aria-describedby="basic-addon3">
+                  <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon3"> <mdb-icon fas icon="eye-slash" *ngIf="hide3==true else eyeOpen3" (click)="hide3 = !hide3"></mdb-icon></span>
+                          <ng-template #eyeOpen3 >
+                              <mdb-icon fas icon="eye" (click)="hide3 = !hide3"></mdb-icon>
+                          </ng-template>
+                  </div>                       
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn rounded-pill" style="background-color:#0077b6;color: white;padding: 10px 30px;">Guardar Contraseña</button>
+              </div>
+          </form>
+        </div>
+  
+        <form (submit)=actualizarPerfil()>
+        <h5>Información Profesional</h5>
+        <div class="d-flex flex-column" id="cambioContact">
+        <div class="p-2">
+          <label for="">Telefono</label>
+          <input value="{{profile.telefono}}" maxlength="11" type="text" name="" value=""
+          minlength="6"
+          required minlength="6"
+          [(ngModel)]="profile.telefono" name="telefono"
+          #telefono="ngModel"
+          >
+        </div>
+
+        <div class="p-2">
+            <label for="">Tecnologías:</label>
+            <textarea class="form-control" rows="2" cols="" id="tecnologias"
+            [(ngModel)]="profile.tecnologias" name= "tecnologias" 
+            value="{{profile.tecnologias}}" #tecnologias="ngModel"></textarea>   
+        </div>
+
+        <div class="p-2">
+            <label for="">Experiencia:</label>
+            <textarea class="form-control" rows="2" cols="" id="experiencia"
+            [(ngModel)]="profile.experiencia" name= "experiencia" 
+            value="{{profile.experiencia}}" #experiencia="ngModel"></textarea>
+        </div>
+        
+        </div>
+        <br>
+        <div class="text-center">
+          <button type="submit" class="btn rounded-pill" style="background-color:#0077b6;color: white;padding: 10px 30px;">Guardar Información</button>
+        </div>
+        </form>
+        
+        <br>
+      </form>
+    
+    </div>
+    <div class="col-3">
+    </div>
+    </div>

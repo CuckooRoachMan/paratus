@@ -1,0 +1,141 @@
+<div style="padding-bottom: 15%">
+    <div class="container text-center" style="background-color: whitesmoke;" >
+      <h3>Profesionales</h3>
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <!--div class="row mt-5">
+              <div class="col-3 offset-9">
+                <a  class="btn btn-primary text-roght"> Crear Usuario</a>
+              </div>
+          </div-->
+          <div class="md-form" class="buscar">
+            <input
+              type="text"
+              [(ngModel)]="searchText"
+              class="form-control"
+              id="search"
+              mdbInput
+            />
+            <label for="search">Buscar Un Profesional</label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="table-responsive">
+          <table mdbTable #tableEl="mdbTable" class="z-depth-1 table table-striped table-bordered">
+              <thead>
+                  <tr>
+                    <th
+                      *ngFor="let head of headElements; let i = index"
+                      scope="col"
+                  >
+                      {{head}}
+                  </th>
+                  <!--th> Acciones </th-->
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let el of elements; let i = index">
+                      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Nombre}}</td>
+                      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Correo}}</td>
+                      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Profesion}}</td>
+                      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Tecnologias}}</td>
+                      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.Experiencia}}</td>
+                      <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                        <a  class="btn btn-block btn-primary rounded-pill text-center" (click)="mostrarProfesional(content,el.ID)"
+                        style="color: white;"> Ver perfil</a>
+                        &nbsp;
+                      </td>
+                  </tr>
+              </tbody>
+              <tfoot class="grey lighten-5 w-100">
+                  <tr>
+                    <td colspan="7">
+                      <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+                    </td>
+                  </tr>
+              </tfoot>
+          </table>
+      </div>
+    </div>
+  </div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header" style="background-color:#3F729B">
+    <h4 class="modal-title mx-auto" id="modal-basic-title" style="color:white;">Profesional</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="color:white;">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class=" row mx-auto">
+      <div class="col-lg-1 col-md-1">
+      </div>
+      <div class="profile-card card col-md-10 my-4">
+        <div class="card-body">
+          <div class="row justify-content-center justify-content-center">
+            <div class="col-11 col-lg-4" id="profile-photo" >
+                <div class="text-center">
+                    <img class="rounded-circle img-fluid" src="../../../assets/img/db.png" alt=""/>
+                </div>
+                <h2>{{elements[idElement].Nombre}}</h2>
+            </div>
+            <div class="col-11 col-lg-8 d-flex flex-row flex-wrap border-none" id="profile-info">
+                  <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                    <br>
+                    <br>
+                  <b><label for="">Nombre de Usuario:</label></b>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                    <br>
+                    <br>
+                  <b><label for="">{{elements[idElement].NombreUsuario}}</label></b>
+                </div>
+                <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                  <b><label for="">Correo:</label></b>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                  <b><label for="">{{elements[idElement].Correo}}</label></b>
+                </div>
+
+                <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                  <b><label for="">Profesión:</label></b>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                  <b><label for="">{{elements[idElement].Profesion}}</label></b>
+                </div>
+
+                <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                  <b><label for="">Tecnologías:</label></b>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                  <b><label for="">{{elements[idElement].Tecnologias}}</label></b>
+                </div>
+
+                <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                  <b><label for="">Experiencia:</label></b>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-9 d-flex flex-column">
+                  <b><label for="">{{elements[idElement].Experiencia}}</label></b>
+                </div>
+
+                <div class="col-12 col-sm-4 col-lg-3 d-flex flex-column">
+                  <b><label for="">Telefono:</label></b>
+                </div>
+                <div class="col-12 col-sm-8 col-lg-0 d-flex flex-column">
+                  <b><label for="">{{elements[idElement].Telefono}}</label></b>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <!--button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button-->
+  </div>
+</ng-template>

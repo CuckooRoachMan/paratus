@@ -1,0 +1,104 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!--Navbar-->
+<div class="pb-6 pb-sm-6 pb-md-4 pb-lg-4 pb-xl-4">
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-background-color:#0077b6 fixed-top unique-color" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Paratus</a></mdb-navbar-brand>
+
+    <!-- Collapsible content -->
+    <links>
+    <ul class= "navbar-nav ml-auto">
+      <div *ngIf="!authService.loggedIn() && !authService.loggedInDev()">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a>
+        </li>
+      </div>
+      <div *ngIf="!authService.loggedIn() && !authService.loggedInDev()">
+      <li class="nav-item ">
+          <a class="nav-link"  routerLink="/function" routerLinkActive="active">Como Funciona</a>
+        </li>
+      </div>
+        <div *ngIf="!authService.loggedIn() && !authService.loggedInDev()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/signin" routerLinkActive="active">Iniciar Sesion</a>
+          </li>
+        </div>
+        <div *ngIf="!authService.loggedIn() && !authService.loggedInDev()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/type-user" routerLinkActive="active">Registrarse</a>
+          </li>
+        </div>
+        <!--<div *ngIf="authService.loggedIn()">
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/newProject" routerLinkActive="active">Crear Proyecto</a>
+          </li>
+        </div>-->
+        <div *ngIf="authService.loggedIn()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/profile" routerLinkActive="active">Perfil</a>
+          </li>
+        </div>
+        <div *ngIf="authService.loggedInDev()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/profile-dev" routerLinkActive="active">Perfil</a>
+          </li>
+        </div>
+        <div *ngIf="authService.loggedInDev()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/show-projects" routerLinkActive="active">Proyectos</a>
+          </li>
+        </div>
+        <!--<div *ngIf="authService.loggedIn()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/projects" routerLinkActive="active">Mis Proyectos</a>
+          </li>
+        </div>
+        <div *ngIf="authService.loggedIn()">
+          <li class="nav-item" >
+            <a class="nav-link"  routerLink="/search-prof" routerLinkActive="active">Buscar Profesionales</a>
+          </li>
+        </div>-->
+        <div>
+          <li class="nav-item" *ngIf="authService.loggedIn();">
+            <a class="nav-link" (click)="authService.logout()" routerLink="/signin">Salir</a>
+          </li>
+        </div>
+        <div>
+          <li class="nav-item" *ngIf="authService.loggedInDev();">
+            <a class="nav-link" (click)="authService.logoutDev()" routerLink="/signin">Salir</a>
+          </li>
+        </div>
+    </ul>
+    </links>
+    <!-- Collapsible content -->
+
+  </mdb-navbar>
+  </div>
+  <!--/.Navbar-->
+  <!--Footer-->
+
+  <footer class="page-footer font-small fixed-bottom blue-grey darken-3 pt-2" >
+      <!-- Footer Elements -->
+
+    </footer>
+  <!--/.Footer-->
+
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+  <!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+  <router-outlet></router-outlet>

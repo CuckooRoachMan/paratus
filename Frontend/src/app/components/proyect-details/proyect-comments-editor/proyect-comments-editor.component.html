@@ -1,0 +1,27 @@
+<div class="">
+  <div class="d-flex justify-content-start">
+    <img class="rounded-circle img-fluid" [src]="imgURL" alt="" id="profile-pic">
+    <label class="d-flex flex-column bd-highlight mb-3">
+      <label class="p-2" ><h6>&nbsp;&nbsp;{{this.profile.username}}&nbsp;&nbsp; </h6></label>
+      <textarea class="p-2" name="cuerpoEditor" rows="4" cols="80" id="commentTextArea"
+      maxlength="1000" minlength="1"
+      required minlength="1"
+      [(ngModel)]="comentario.cuerpo"
+      #cuerpoEditor="ngModel"
+      ></textarea>
+
+      <div *ngIf="emptyCuerpo " class="alert alert-warning box-msg" role="alert">
+        <strong>Falta escribir un comentario</strong>
+      </div>
+      <!--div>
+      <div *ngIf="cuerpoEditor.invalid && (cuerpoEditor.dirty || cuerpoEditor.touched)"
+      class="alert alert-danger">
+        <strong>El comentario no puede ir vacio</strong>
+      </div>
+      </div-->
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-xl btn-primary" (click)="enviarComentario()" type="button" name="button" id="btnResponder">Agregar comentario</button>
+      </div>
+    </label>
+  </div>
+</div>
